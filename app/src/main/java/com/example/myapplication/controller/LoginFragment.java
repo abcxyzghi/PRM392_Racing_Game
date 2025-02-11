@@ -29,9 +29,9 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_layout, container, false);
 
-        usernameEditText = view.findViewById(R.id.editText);
-        startTextView = view.findViewById(R.id.tvStart);
-        tutorialTextView = view.findViewById(R.id.tvTurtorial);
+        usernameEditText = view.findViewById(R.id.et_username);
+        startTextView = view.findViewById(R.id.btn_login);
+        tutorialTextView = view.findViewById(R.id.btn_tutorial);
 
         AudioMixer.getInstance().playAudio(AudioStage.LOGIN, getContext());
 
