@@ -17,11 +17,11 @@ public class AudioMixer {
     private AudioMixer () {
         mediaPlayerList = new EnumMap<>(AudioStage.class);
         mediaPlayerList.put(AudioStage.LOGIN, R.raw.login);
-        mediaPlayerList.put(AudioStage.BEGIN, R.raw.play);
+        mediaPlayerList.put(AudioStage.BEGIN, R.raw.game_8bit);
         mediaPlayerList.put(AudioStage.CASH, R.raw.cash);
         mediaPlayerList.put(AudioStage.HOME, R.raw.home);
         mediaPlayerList.put(AudioStage.LOSE, R.raw.lose);
-        mediaPlayerList.put(AudioStage.WIN, R.raw.login);
+        mediaPlayerList.put(AudioStage.WIN, R.raw.goodresult);
     }
     public static AudioMixer getInstance () {
         if (instance == null) {
