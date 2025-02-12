@@ -124,7 +124,7 @@
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/horse1"
+                        android:id="@+id/car1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -140,7 +140,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
-                        android:id="@+id/horse1Text"
+                        android:id="@+id/car1Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="30dp"
@@ -156,7 +156,7 @@
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/horse2"
+                        android:id="@+id/car2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -172,7 +172,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
-                        android:id="@+id/horse2Text"
+                        android:id="@+id/car2Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="30dp"
@@ -188,7 +188,7 @@
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/horse3"
+                        android:id="@+id/car3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
@@ -204,7 +204,7 @@
                         android:textColor="#000000"/>
 
                     <EditText
-                        android:id="@+id/horse3Text"
+                        android:id="@+id/car3Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="30dp"
