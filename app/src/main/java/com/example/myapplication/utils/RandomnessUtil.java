@@ -10,7 +10,7 @@ public class RandomnessUtil {
         return (int) (Math.random() * 3) + 1;
     }
 
-    private static int getRandomSpeed() {
+    public static int getRandomSpeed() {
         Random random = new Random();
         return random.nextInt(maxSpeed - minSpeed + 1) + minSpeed;
     }
