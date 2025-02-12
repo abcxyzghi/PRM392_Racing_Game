@@ -23,6 +23,7 @@ import com.example.myapplication.model.Bet;
 import com.example.myapplication.service.AudioMixer;
 import com.example.myapplication.service.BetService;
 import com.example.myapplication.utils.DataUtils;
+import com.example.myapplication.utils.RandomnessUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -210,8 +211,7 @@ public class HomeFragment extends Fragment {
 
                 @Override
                 public void run() {
-                    Random random = new Random();
-                    int increment = random.nextInt(6);  // Random step 0-15
+                    int increment = RandomnessUtil.getRandomSpeed();
                     progress += increment;
                     seekBars[finalI].setProgress(progress);
 
