@@ -219,8 +219,8 @@ public class HomeFragment extends Fragment {
                         handler.postDelayed(this, 100);
                     } else {
                         finished.set(finalI, true);
-                        if (DataUtils.getInstance().getWincar() == -1) {
-                            DataUtils.getInstance().setWincar(finalI);
+                        if (DataUtils.getInstance().getWinCar() == -1) {
+                            DataUtils.getInstance().setWinCar(finalI);
                         }
                         if (!finished.contains(false)) {
                             announceWinner();
@@ -236,7 +236,7 @@ public class HomeFragment extends Fragment {
 
     private void announceWinner() {
 
-        double winnings = BetService.getInstance().calculateBet(DataUtils.getInstance().getWincar());
+        double winnings = BetService.getInstance().calculateBet(DataUtils.getInstance().getWinCar());
 
         userBalance += winnings;
 
