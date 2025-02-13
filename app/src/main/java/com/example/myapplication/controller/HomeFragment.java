@@ -82,9 +82,9 @@ public class HomeFragment extends Fragment {
 
         // Add event listeners
         initEventClickChange();
-        initEventBetChange(car1Text, 1);
-        initEventBetChange(car2Text, 2);
-        initEventBetChange(car3Text, 3);
+        initEventBetChange(car1Text, 0);
+        initEventBetChange(car2Text, 1);
+        initEventBetChange(car3Text, 2);
 
         AudioMixer.getInstance().playAudio(AudioStage.HOME, getContext());
 
@@ -149,22 +149,22 @@ public class HomeFragment extends Fragment {
 
     private void initEventClickChange() {
         car1.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            handlecarSelection(isChecked, car1Text, 1);
+            handleCarSelection(isChecked, car1Text, 0);
             updateBetPrice ();
         });
 
         car2.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            handlecarSelection(isChecked, car2Text, 2);
+            handleCarSelection(isChecked, car2Text, 1);
             updateBetPrice ();
         });
 
         car3.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            handlecarSelection(isChecked, car3Text, 3);
+            handleCarSelection(isChecked, car3Text, 2);
             updateBetPrice ();
         });
     }
 
-    private void handlecarSelection(boolean isChecked, EditText carText, int carId) {
+    private void handleCarSelection(boolean isChecked, EditText carText, int carId) {
         if (isChecked) {
             carText.setEnabled(true);
             Bet temp = Bet.builder()

@@ -94,7 +94,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/edit_text_background"
                         android:ems="10"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:enabled="false"/>
 
                     <TextView
                         android:id="@+id/textView"
