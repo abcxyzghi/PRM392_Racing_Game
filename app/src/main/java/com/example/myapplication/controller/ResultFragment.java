@@ -29,22 +29,34 @@ public class ResultFragment extends Fragment {
         winningsTextView = view.findViewById(R.id.tvWinnings);
         backTextView = view.findViewById(R.id.tvBack);
 
+        // Retrieve the correct winning car
         int winningCar = DataUtils.getInstance().getWinCar();
-        double newBalance = DataUtils.getInstance().getCurrentUser().getCash();
 
-        double winnings = BetService.getInstance().calculateBet(winningCar);
-        newBalance += winnings;
-        DataUtils.getInstance().getCurrentUser().setCash(newBalance);
-
-        if (winnings > 0) {
-            AudioMixer.getInstance().playAudio(AudioStage.WIN, getContext());
-            winnerTextView.setText("Car " + (winningCar + 1) + " Won!");
-            winningsTextView.setText("+" + winnings + " VND");
-        } else {
-            AudioMixer.getInstance().playAudio(AudioStage.LOSE, getContext());
-            winnerTextView.setText("Car " + (winningCar + 1) + " Won!");
+        // Ensure we have a valid winning car
+        if (winningCar == -1) {
+            winnerTextView.setText("No winner detected");
             winningsTextView.setText("0 VND");
+            AudioMixer.getInstance().playAudio(AudioStage.LOSE, getContext());
+        } else {
+            // Calculate and update winnings correctly
+            double winnings = BetService.getInstance().calculateBet(winningCar);
+            double newBalance = DataUtils.getInstance().getCurrentUser().getCash() + winnings;
+            DataUtils.getInstance().getCurrentUser().setCash(newBalance);
+
+            // Display the correct winner and winnings
+            winnerTextView.setText("Car " + (winningCar + 1) + " Won!");
+            winningsTextView.setText(winnings > 0 ? "+" + winnings + " VND" : "0 VND");
+
+            // Play the appropriate sound
+            if (winnings > 0) {
+                AudioMixer.getInstance().playAudio(AudioStage.WIN, getContext());
+            } else {
+                AudioMixer.getInstance().playAudio(AudioStage.LOSE, getContext());
+            }
         }
+
+        // Reset the winCar after displaying results
+        DataUtils.getInstance().setWinCar(-1);
 
         backTextView.setOnClickListener(v -> {
             HomeFragment homeFragment = new HomeFragment();
