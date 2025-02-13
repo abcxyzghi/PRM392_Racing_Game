@@ -34,18 +34,19 @@ public class BetService {
         return userBet.get(carId);
     }
 
-    public Double calculateBet(int winHorse) {
-        double total = 0;
-        for (Bet bet: userBet.values()) {
-            if(bet.getCarId() == winHorse) {
-                total += bet.getBet() * 2;
-            } else {
-                total -= bet.getBet();
+    public double calculateBet(int winCar) {
+        double winnings = 0;
+        double totalBet = 0;
+
+        for (Bet bet : userBet.values()) {
+            totalBet += bet.getBet(); // Tổng số tiền đã cược
+            if (bet.getCarId() == winCar) {
+                winnings = bet.getBet() * 2; // Nếu xe thắng, nhân đôi số tiền đặt
             }
         }
-        return total;
-    }
 
+        return winnings - totalBet; // Lợi nhuận cuối cùng
+    }
     public Double totalBet() {
         double total = 0;
         for (Bet item: userBet.values()) {
