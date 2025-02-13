@@ -193,6 +193,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void startRace() {
+        // Reset the previous winner before a new race
+        DataUtils.getInstance().setWinCar(-1);
+
         stopRace();
         resetRace();
         for (int i = 0; i < handlers.size(); i++) {
