@@ -23,7 +23,8 @@
             </intent-filter>
 
         </activity>
-
+        <activity android:name=".controller.ResultFragment" android:exported="false"/>
+        <activity android:name=".controller.TutorialActivity" android:exported="false"/>
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ public class TutorialActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.turtorial_layout);
+        setContentView(R.layout.tutorial_layout);
         closeTextView = findViewById(R.id.tvClose);
         closeTextView.setOnClickListener(v -> finish());
     }
