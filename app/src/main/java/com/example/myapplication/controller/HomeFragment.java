@@ -41,11 +41,20 @@ public class HomeFragment extends Fragment {
     private final List<Runnable> runnables = new ArrayList<>();
     private final List<Boolean> finished = new ArrayList<>();
     private double userBalance = 0;
-
+    private TextView tvUsername;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_layout, container, false);
+        tvUsername = view.findViewById(R.id.tvUsername);
+
+        // Lấy username từ DataUtils và hiển thị
+        if (DataUtils.getInstance().getCurrentUser() != null) {
+            tvUsername.setText("Welcome, " + DataUtils.getInstance().getCurrentUser().getUsername() + "!");
+        } else {
+            tvUsername.setText("Welcome, Guest!");
+        }
+
         // Init objects
         car1 = view.findViewById(R.id.car1);
         car2 = view.findViewById(R.id.car2);
