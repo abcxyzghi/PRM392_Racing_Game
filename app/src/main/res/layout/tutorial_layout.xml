@@ -29,20 +29,20 @@
 
         <View
             android:id="@+id/view"
-            android:layout_width="333dp"
-            android:layout_height="444dp"
+            android:layout_width="371dp"
+            android:layout_height="464dp"
             android:layout_below="@id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:background="#36000000" />
 
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="329dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="1. Choose a car..\n2. Enter the bet amount.\n3. Start the race.\n4. You can reset to play again."
+            android:text="1. Choose a car..\n2. Enter the bet amount.\n3. Start the race.\n4. You can use cash to deposit money."
             android:textColor="@color/white"
             android:textSize="24sp" />
 
@@ -58,7 +58,7 @@
             android:fontFamily="monospace"
             android:padding="10dp"
             android:text="Close"
-            android:textColor="#EF5F5D5D"
+            android:textColor="#FFEB3B"
             android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>
